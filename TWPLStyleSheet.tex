@@ -1,0 +1,277 @@
+\documentclass[xelatex,linguex]{TWPL} 
+% We strongly recommend you compile this file using XeLaTeX rather than plain LaTeX or PDFTeX, because of full font and Unicode character support (see below). This option is available in all major LaTeX editors, assuming you have the XeLaTeX engine installed in your LaTeX distribution: check the Compile menu or set a new compilation keyboard shortcut using ``xelatex'' instead of ``pdftex''. 
+% However, if you still prefer or need PDFLaTeX, this option is available by removing the ``xelatex'' optional argument from the \documentclass declaration above.
+
+% If you have any issues with small caps in your documents, please see the note in the font section of the .cls file.
+% If you are compiling with XeLaTeX will not need IPA support beyond what is provided by Times New Roman, and you do not want to install the Doulos SIL font for IPA, there is a \documentclass option called ``nodoulos'' that will prevent that font from being loaded.
+
+% This class currently fully supports only one linguistic example package: linguex. (hopefully this will change in the future!) This is selected through an optional argument to the \documentclass. The default option is ``linguex'', as seen above (this is what this file uses). You may also use a different package if you prefer (e.g., gb4e, covington, expex) by removing the ``linguex'' argument and adding your package to \usepackage below. Please note that in this case you are responsible for ensuring your examples conform to the style described here.
+
+\usepackage{tikz} % Optional; only used for drawing Figure 1 below, so feel free to remove if you are not using it.
+\usepackage{hologo} % this package is needed only for the \BibTeX and \XeLaTeX macros below (and the latter only if not using XeLaTeX!). You can safely remove it for your own manuscript.
+ 
+% your other packages or macros go here!
+
+
+
+
+
+%% Enter the info for your paper below:
+\articletitle[Short title]{Your paper's title in 18pt regular Arial font, sentence case} 
+% If you do not have acknowledgements, comment out the line below; this will remove the asterisk and the footnote.
+\acknowledge{Acknowledgements go here in a special footnote. Unlike the paper title itself, the asterisk beside your paper title should be in Times New Roman font.}
+\author{Jane Smith}
+\affiliation{University of Wherever}
+\abstract{The title, author(s), affiliation(s), and abstract will all be indented 7.62 cm (3 in). The abstract will be in 10pt Times New Roman font, while the author(s) and affiliation(s) will be in 11pt Arial, and all fields will be separated by one blank line. Please note that your abstract should not take up more than a third of the page. Try to avoid using special characters or formatting in your title or abstract, as these may not appear correctly on the website and may not be searchable.}
+
+% This is the number of the volume you are submitting to. Depending on how vigilant we have been, this may or may not require updating.
+\volnum{36}
+
+
+\begin{document}
+
+\section{Introduction}
+
+This is a sample \texttt{.tex} file showing the implementation of the TWPL class. Most of the formatting of this document is done for you, but the desired parameters are still described briefly at the beginning of each section. However, some guidelines are not or cannot be implemented automatically, so we encourage you to still go through this document carefully.
+
+\section{Section titles \& pagination}
+
+All section and subsection titles are set in 11pt Arial font, with a blank 11pt line separating them from the main text. The numbering is aligned to the left margin, while the title is indented 1 cm (0.39 in) to match the paragraph indentation.
+
+Your section titles should be in sentence case, like your paper title, rather than title case. Although \LaTeX\ will try to optimize your pagination automatically, this is not always feasible. Please ensure that all section headings at the bottom of a page are followed by at least two lines of text, and try to avoid \textit{widows} (final paragraph lines spilling over onto a new page) and \textit{orphans} (first lines of paragraphs at the bottom of a page).
+
+\section{Paper body \& font use}
+
+Each paragraph is indented 1 cm (0.39 inches), with no blank lines or additional spacing in between. Text is fully justified (aligned to both margins) and set in 11pt Times New Roman. Because versions of Times New Roman and Arial earlier than Windows 8.1 do not have built-in small caps, the TWPL class substitutes small caps from the nearly identical TeX Gyre series of fonts, which are probably installed automatically by your \LaTeX\ distribution. If they are not, make sure the \texttt{tex-gyre} package is installed, or see the font section of the \texttt{.cls} file.
+
+We strongly recommend you compile your manuscript with \XeLaTeX\ rather than plain \LaTeX or PDF\TeX, because of full font and Unicode character support. Because most versions of Times New Roman also lack full support for IPA 
+
+\subsection{Formatting}
+
+In-text linguistic data should be in italics. Glosses of non-English words should be in single quotes. For example: ``Discourse marker \textit{like} occurs at a rate of\ldots''; ``The Finnish word \textit{juusto} ‘cheese’ is an example of\ldots'' Italics should be used for emphasis, terms being defined, and titles of books or journals. Small caps should be used only for grammatical categories or the names of Optimality Theory constraints. 
+Underlining should only be used to highlight part of a word. For example: abuel\underline{o}, abuel\underline{a}.
+
+\subsection{Margins}
+
+Margins are set to 2.54cm (1 in) on all sides, and the page size is set to US letter (21.59 $\times$ 27.94 cm; 8.5 $\times$ 11 in) rather than A4.
+
+
+\subsection{Footnotes}
+
+Your first footnote should be indicated by a superscript asterisk at the end of your paper's title. This footnote will contain your acknowledgements and a short list of abbreviations and acronyms used in your paper. All subsequent footnotes should be numbered, beginning at `1'. Your footnotes should be in 10pt Times New Roman font. A 5cm line should separate your footnotes from the body of the paper (this is the default in Word).\footnote{A footnote related to content on this page. It is in 10pt Times New Roman; note that this means that \texttt{\textbackslash small} and \texttt{\textbackslash footnotesize} are the same size in this class.} Note that while your paper title is in Arial font, the asterisk should be in Times New Roman font.
+
+\subsection{Headers \& footers}
+
+The first page of the document has a blank header and no page number; there is a two-line footer in italic 10pt Times New Roman containing the journal, volume, and copyright information. Double-check that the volume number specified in the preamble (in \verb;\volnum{};) is correct; otherwise, this is automatically generated.
+
+
+Your headers should also be set to `Different Odd and Even Pages'; on even pages you will have your name(s) in 10pt Times New Roman Font. This should be centred and in \textsc{Small Caps}, while on odd pages (beginning with page 3) you will have the title of your paper, again in 10pt Times New Roman, centred and in \textsc{Small Caps}. Note that you must still capitalize the first letter of each name, e.g.: \textsc{Noam Chomsky}, not *\textsc{noam chomsky}. If the title of your paper does not fit on a single line, do not include any subtitles and shorten the title so it does not exceed one line.
+
+Finally, you must add page numbers. Set page numbers not to appear on the first page of your paper. They should be centred 1.25cm from at the bottom of the pages beginning on page 2. Page numbers should be in 10pt Times New Roman font.
+
+
+\section{Linguistic examples}
+
+You may use whichever linguistic example package you wish, so long as it conforms to the following guidelines. If you use \texttt{linguex}, you need only supply \texttt{linguex} as an option to \verb;\documentclass[]{TWPL};. Support for other packages is forthcoming; in the meantime, if you use another package (e.g., \texttt{gb4e}, \texttt{covington}, or \texttt{expex}), you must add it yourself in the preamble and make sure it conforms to these requirements.
+
+The first level of examples should be aligned to the left margin, and numbered beginning with (1). The text of the example itself should be indented 1cm. Sub-examples should be listed with letters beginning with `a.', while sub-sub-examples will begin with `i.'. Each level is indented an additional 1cm, as seen below. Try to avoid using more than three levels of embedding in examples (i.e., (1), a., i.).
+
+%% LINGUEX EXAMPLES 
+\vbox{
+\exg. watashi-wa biiru-o aisiteiru \\
+I-\textsc{nom} beer-\textsc{acc} love.\textsc{pres.prog} \\
+`I love beer.'
+\label{japanese}
+
+}
+
+\vbox{
+\ex. Example 
+	\a. Example 
+	\b. Example 
+		\a. Example
+		\b.	Example
+
+}
+
+%\setlist[exe]{itemindent=-4em,labelindent=-3em}
+
+%% GB4E EXAMPLES 
+%\vbox{
+	%\begin{exe}
+%\label{japanese}
+%\ex
+%\gll watashi-wa  biiru-o       aisiteiru\\
+ %I-\textsc{nom} beer-\textsc{acc} love.\textsc{pres.prog}\\
+%\trans `I love beer.'
+%\end{exe}
+%}
+
+
+%\vbox{
+	%\begin{exe}
+%\ex Example
+	%\begin{xlist}
+	%\ex Example
+		%\begin{xlist}
+		%\ex Example
+		%\ex Example
+		%\end{xlist}
+	%\end{xlist}
+%\end{exe}
+%}
+
+%% EXPEX EXAMPLES
+
+%\lingset{textanchor=numleft,labelanchor=numleft,numoffset=0cm,labeloffset=1cm,textoffset=1cm,aboveglftskip=0pt}
+
+%\ex 
+%\label{japanese} % this is non-standard for expex, but necessary to get a correct reference below
+%\begingl
+%\gla watashi-wa  biiru-o       aisiteiru//
+%\glb I-\textsc{nom} beer-\textsc{acc} love.\textsc{pres.prog}//
+%\glft `I love beer.'//
+%\endgl
+%\xe
+
+%\pex Example
+	%\a Example
+	%\a Example
+%\xe
+
+
+%\begin{enumerate}
+	%\item example
+	%\item example
+	%\item example
+%\end{enumerate}
+
+Leave a blank line between examples, except between sub-examples. Examples should be accompanied by glosses and translations where appropriate. Use small caps to indicate abbreviations of grammatical or functional morphemes / forms instead of all caps. Glosses should adhere to the Leipzig Glossing Rules.
+
+Make sure your examples are not broken up across pages. An example, its gloss, and its translation should all appear on the same page. To ensure this happens, you can put at-risk examples inside a \verb;\vbox{}; to ensure everything stays together. Note that if you are using \texttt{linguex} for your linguistic examples, you will need to leave a blank line before the closing curly brace in order to close the example environment (this can be seen in the \texttt{.tex} file).
+
+When repeating an earlier example, refer to the first instance of it in the text, and then assign it a new number (e.g., ``the example in \ref{japanese}, repeated here as (14), shows\ldots'').  If your examples are sourced from another author's work, state the author's name and work in the text preceding the example and provide the page number the original example occurs on.
+
+\section{Trees}
+
+We do not mandate any particular style for linguistic trees, so long as they are neat and uniform. This means you may use your choice of tree-drawing packages, such as the classic \texttt{qtree} (possibly supplemented with \texttt{tikz-qtree} for drawing arrows) or the newer \texttt{forest} package, which is built on TiKZ.
+
+\section{Tables \& Figures}
+
+Please use the \verb;\table{}; and \verb;\figure{}; environments for your tables and figures; this will number your tables and figures separately from each other and your linguistic examples. The location of the float can be specified with an optional argument after the \verb;\begin; command: \texttt{[t]} and \texttt{[b]} will keep your float at the top or bottom of a page (\LaTeX\ will try to make this the page the environment is declared on, but sometimes it doesn't fit); \texttt{[p]} will reserve your float for its own float page; and \texttt{[h]} will place a float ``here''. You may give multiple letters as a positioning guideline: \texttt{[ht]} will place the float where it is declared, or if that is not possible, at the top of a page. Adding a \texttt{!} at the beginning of the place declaration may help override some positioning preferences, if you aren't getting the position you want.
+
+Make sure that your tables and figures fit within the specified margins---this is particularly crucial for tables, which can easily overflow. Please also centre-align your floats; this can be done by using the \verb;\centering; switch at the beginning of the float environment. 
+
+Do not use any colours other than black or white anywhere in your work, including in your tables and figures. Shading in grey is acceptable. 
+
+Tables should use horizontal lines only, and avoid vertical lines whenever possible; the lines at the top and bottom of your table should be thicker than the middle ones, and middle lines used sparingly. The TWPL class includes the \texttt{booktabs} package, which defines nicely-spaced horizontal rules of different widths for this purpose. Use \verb;\toprule; and \verb;\bottomrule; at the top and bottom of your table and \verb;\midrule; otherwise.
+
+All tables and figures should have a title in sentence case. Use the \verb;\caption{}; command for this, and place it above the body of your table or figure. This caption is in italics.
+
+\begin{table}[h]
+	\caption{Example table}
+	\label{tab:}
+	\centering
+	\begin{tabular}{cccc}
+	\toprule
+Greek & Latin & Numbers & Roman \\
+\midrule
+$\alpha$	& A	& 	One 	& I \\
+$\beta$		& B	&	Two 	& II \\
+$\gamma$	& C	&	Three 	& III  \\
+$\delta$	& D	&	Four 	& IV  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+	\centering
+	\caption{Morphology}
+	\label{fig:}
+	\begin{tikzpicture}
+		\draw [semithick] (0,0) circle (1in);	
+	\end{tikzpicture}
+\end{figure}
+
+
+\section{Spelling \& style}
+
+Canadian, American, and British spellings are all acceptable, as long as you are consistent. For instance, if you spell `flavour' with a `u' in your submission you should do the same with `behaviour' and `colour'. 
+
+The numbers one to ten should be spelled out, and all others should be given in numerals (unless at the beginning of a sentence, in which case they should be spelled out). Number ranges should use en-dashes (--) instead of hyphens (-). For example, ``Eighty-five percent of all speakers aged 18--30\ldots'' 
+
+Acronyms should be spelled out in full at the first use, with the acronym given in parentheses following. For example, ``According to the Obligatory Contour Principle (OCP)\ldots''
+
+
+\section{In-text citations}
+
+The TWPL class uses APA citation format, which is handled by the \texttt{apacite} package. In-text citations use the \texttt{natbib} citation commands, summarized in Table \ref{citations}. Note that the APA style requires ``and'' between author names in text and ``\&'' between author names in parenthetical citations; in case you need make this distinction in \verb;\citeauthor{};, \texttt{apacite} also defines \verb;\citeauthort{}; and \verb;\citeauthorp{};.
+
+This class diverges slightly from standard APA in that it uses colons to indicate pages, rather than commas: \citet[1]{SPE}, not \citeauthort{SPE} (\citeyear{SPE}, p.\ 1). These page ``postfixes'' are given as an optional argument: \verb;\citep[1]{SPE}; \citep[1]{SPE}. A second optional argument is used if any ``prefixes'' are needed:  \verb;\citep[e.g.,][1]{SPE}; \citep[e.g.,][1]{SPE}. If only a ``prefix'' is desired, provide two optional arguments but leave the second empty: \verb;\citep[e.g.,][]{SPE}; \citep[e.g.,][]{SPE}.
+
+Finally, this class defines a command for possessive author names, \verb;\citeposs{};, with the possessive morpheme after the name (e.g., ``\citeposs{SPE} position\ldots'').
+
+\begin{table}
+	\caption{Citation commands in \texttt{apacite}, \texttt{natbibapa} style}
+	\label{citations}
+	\centering
+	\begin{tabular}{ll}
+		\toprule
+		Command & Output \\
+		\midrule
+		\verb;\citet{SPE}; & \citet{SPE} \\
+		\verb;\citep{SPE}; & \citep{SPE} \\
+		\verb;\citealt{SPE}; & \citealt{SPE} \\
+		\verb;\citealp{SPE}; & \citealp{SPE} \\
+		\verb;\citeyear{SPE}; & \citeyear{SPE} \\
+		\midrule
+		\verb;\citeauthort{SPE}; & \citeauthort{SPE} \\
+		\verb;\citeauthorp{SPE}; & \citeauthorp{SPE} \\
+		\midrule
+		\verb;\citeposs{SPE}; & \citeposs{SPE} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+\section{References}
+
+References are fully handled by \texttt{apacite}; the only requirement on your part is to provide the name of your \texttt{.bib} file (without the file extension) as an argument to \verb;\bibliography{};. This file does not explain \hologo{BibTeX} syntax, as it is lengthy and there are excellent explanations online. However, please use en-dashes in your page ranges rather than hyphens (\LaTeX\ converts all \verb;--; sequences to en-dashes), and give full numbers for page ranges, as is standard in APA style (i.e. ``150--151'', not ``150-151'' or ``150--1'').
+
+Your references will appear as an un-numbered section at the end of your paper (barring any appendices), continuing directly after your body text. Do not explicitly start a new page for the references. 
+
+\section{Appendices}
+
+Appendices should follow your references, and be given representative titles in sentence case. They are lettered sequentially. This can be achieved by providing the \verb;\appendix; switch after your bibliography, which will cause all future \verb;\section{};s to appear as appendices. All other guidelines remain the same as for the body of your paper.
+
+% the references below are added with \nocite so that they appear in the References section
+\nocite{rice1994, hall2011, praat, R, zeijlstra2008, lehiste1970}
+
+\bibliography{twpl}
+
+\appendix
+
+\section{Sample acceptability judgement task survey}
+
+Please rate these words with the numbers 1-5, using the explanations for each number given here:
+
+\begin{enumerate}
+	\item  I've never seen or heard a word like this. I don't think anyone would ever say it.
+	\item  I'm not sure if I would say a word like this or not.
+	\item  I think this word is perfectly fine.
+\end{enumerate}
+
+	mh\'iogha
+
+	\medskip
+
+	1 \quad	2 \quad	3		
+
+	\medskip
+
+	If this word isn't good, can you explain what's bad about it?
+
+
+
+\end{document}
