@@ -2,7 +2,7 @@
 %
 % This class provides the style for submissions to the Toronto Working Papers in Linguistics. 
 %
-% v0.9, last updated June 26, 2016
+% v0.91, last updated June 26, 2016
 %
 % Written 2012-2013, 2016 by Radu Craioveanu
 % Email: radu.craioveanu@utoronto.ca 
@@ -194,7 +194,7 @@
 
 %% create title
 \def\maketitle{%
-	{\fontsize{18pt}{22pt}\selectfont {\noindent\raggedleft\textsf{\@fulltitle}\if@ack\footnotemark\fi}\par}
+	{\fontsize{18pt}{22pt}\selectfont\raggedright {\noindent\textsf{\@fulltitle}\if@ack\footnotemark\fi}\par}
 	\vspace{11pt}
 
 			\ifx \@author\@empty\relax

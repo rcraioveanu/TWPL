@@ -6,7 +6,7 @@ In order to use the style, you will need to have the `TWPL.cls` file in the same
 
 ### A note about fonts
 
-Small caps fonts in the body text (TNR) use TeX Gyre Termes, as all versions of Times New Roman before Windows 8.1 do not have small caps. If you are using Windows 8.1 or 10, this can be changed in the .cls file if you wish.
+Small caps fonts in the body text (TNR) use TeX Gyre Termes, as all versions of Times New Roman before Windows 8.1 do not have small caps. If you are using Windows 8.1 or 10, this can be changed in the `.cls` file if you wish.
 Small caps fonts in the paper title and section titles (Arial) use TeX Gyre Heros, for similar reasons.
 
 Packages for these fonts should be installed with your LaTeX install, but that does not mean that XeLaTeX will automatically find them. You must install these with the rest of your system fonts, either by copying them from your TeX directory (search your filesystem for `tex-gyre`) or by downloading them from [here](http://www.ctan.org/tex-archive/fonts/tex-gyre/fonts/opentype/public/tex-gyre "TeX Gyre fonts on CTAN"). They must be added to your operating system's font folder.
