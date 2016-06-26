@@ -25,6 +25,12 @@
 % create a package option to prevent loading Doulos SIL
 \DeclareOption{nodoulos}{\@loaddoulosfalse}
 
+% create an if for loading the TeX Gyre fonts, and default to true
+\newif\if@loadtexgyre 
+\@loadtexgyretrue
+% create a package option to prevent loading Doulos SIL
+\DeclareOption{notexgyre}{\@loadtexgyrefalse}
+
 % linguex option
 \newif\if@loadlinguex 
 \DeclareOption{linguex}{\@loadlinguextrue}
@@ -75,7 +81,9 @@
 % NOTE ON SMALL CAPS:
 % Small caps fonts in the body text (TNR) use TeX Gyre Termes, as all versions of Times New Roman before Windows 8.1 do not have small caps. If you are using Windows 8.1 or 10, this can be changed in the .cls file if you wish.
 % Small caps fonts in the paper title and section titles (Arial) use TeX Gyre Heros, for similar reasons.
-% These fonts should be automatically installed with your LaTeX install! However, if they are not, you can download them here: http://www.ctan.org/tex-archive/fonts/tex-gyre/fonts/opentype/public/tex-gyre
+
+% Packages for these fonts should be installed with your LaTeX install, but that does not mean that XeLaTeX will automatically find them. You must install these with the rest of your system fonts, either by copying them from your TeX directory (search your filesystem for ``tex-gyre'') or by downloading them from here: http://www.ctan.org/tex-archive/fonts/tex-gyre/fonts/opentype/public/tex-gyre. They must be added to your operating system's font folder.
+% To prevent these fonts from being loaded, use ``notexgyre'' as a documentclass option. This will probably only be the case if you don't need small caps or if your TNR and Arial have small caps (Windows 8.1+).
 
 % NOTE ON DOULOS SIL FOR IPA:
 % This class file loads SIL's Doulos font to supplement TNR's character set. If you do not have this font installed, and do not need it for your manuscript, load the documentclass with the option ``nodoulos''. If you do need IPA support but do not have Doulos, you can download it from: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=doulossil_download
@@ -88,6 +96,7 @@
 	\setmainfont[Scale=1]{Times New Roman}
 	\setsansfont[Scale=1]{Arial}
 
+	\if@loadtexgyre
 	% replace TNR (lack of) small caps with TGT small caps
 	\newfontfamily\tgtermes{TeX Gyre Termes}
 		\begingroup
@@ -101,6 +110,7 @@
 			\DeclareFontShape{\f@encoding}{\sfdefault}{m}{sc}{<-> ssub * \f@family/m/sc}{}
 			\DeclareFontShape{\f@encoding}{\sfdefault}{bx}{sc}{<-> ssub * \f@family/bx/sc}{}
 		\endgroup
+	\fi
 
 	% load Doulos SIL for IPA
 	\if@loaddoulos
@@ -184,7 +194,8 @@
 
 %% create title
 \def\maketitle{%
-	{\fontsize{18pt}{22pt}\selectfont {\noindent\raggedleft\textsf{\@fulltitle}\if@ack\footnotemark\fi}}\\
+	{\fontsize{18pt}{22pt}\selectfont {\noindent\raggedleft\textsf{\@fulltitle}\if@ack\footnotemark\fi}\par}
+	\vspace{11pt}
 
 			\ifx \@author\@empty\relax
 				\else {\noindent\raggedleft\textsf{\@author}} \\

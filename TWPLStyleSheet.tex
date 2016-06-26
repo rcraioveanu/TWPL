@@ -1,11 +1,16 @@
 \documentclass[xelatex,linguex]{TWPL} 
+% NOTE 1: COMPILER
 % We strongly recommend you compile this file using XeLaTeX rather than plain LaTeX or PDFTeX, because of full font and Unicode character support (see below). This option is available in all major LaTeX editors, assuming you have the XeLaTeX engine installed in your LaTeX distribution: check the Compile menu or set a new compilation keyboard shortcut using ``xelatex'' instead of ``pdftex''. 
 % However, if you still prefer or need PDFLaTeX, this option is available by removing the ``xelatex'' optional argument from the \documentclass declaration above.
 
-% If you have any issues with small caps in your documents, please see the note in the font section of the .cls file.
-% If you are compiling with XeLaTeX will not need IPA support beyond what is provided by Times New Roman, and you do not want to install the Doulos SIL font for IPA, there is a \documentclass option called ``nodoulos'' that will prevent that font from being loaded.
+% NOTE 2: FONTS
+% Please note that by default, compiling this document with XeLaTeX requires you to have three fonts installed: Doulos SIL, TeX Gyre Termes, and TeX Gyre Heros. If you are compiling with PDFLaTeX, ignore this note.
+% If you will not need IPA support beyond what is provided by Times New Roman, and you do not want to install the Doulos SIL font for IPA, there is a \documentclass option called ``nodoulos'' that will prevent that font from being loaded.
+% If you will not be using small caps, or if your operating system's versions of the Times New Roman and Arial fonts have small caps built-in (usually Windows 8.1 or later), you may prevent the TeX Gyre fonts from being loaded by providing the \documentclass option ``notexgyre'' above.
 
+% NOTE 3: EXAMPLES
 % This class currently fully supports only one linguistic example package: linguex. (hopefully this will change in the future!) This is selected through an optional argument to the \documentclass. The default option is ``linguex'', as seen above (this is what this file uses). You may also use a different package if you prefer (e.g., gb4e, covington, expex) by removing the ``linguex'' argument and adding your package to \usepackage below. Please note that in this case you are responsible for ensuring your examples conform to the style described here.
+
 
 \usepackage{tikz} % Optional; only used for drawing Figure 1 below, so feel free to remove if you are not using it.
 \usepackage{hologo} % this package is needed only for the \BibTeX and \XeLaTeX macros below (and the latter only if not using XeLaTeX!). You can safely remove it for your own manuscript.
@@ -17,7 +22,7 @@
 
 
 %% Enter the info for your paper below:
-\articletitle[Short title]{Your paper's title in 18pt regular Arial font, sentence case} 
+\articletitle[Short title]{What is fillerj filler filler filler filler filler filler filler filler filler filler filler filler filler filler fillerj filler filler filler filler filler filler } 
 % If you do not have acknowledgements, comment out the line below; this will remove the asterisk and the footnote.
 \acknowledge{Acknowledgements go here in a special footnote. Unlike the paper title itself, the asterisk beside your paper title should be in Times New Roman font.}
 \author{Jane Smith}
