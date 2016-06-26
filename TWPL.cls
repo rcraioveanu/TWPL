@@ -2,7 +2,7 @@
 %
 % This class provides the style for submissions to the Toronto Working Papers in Linguistics. 
 %
-% v0.82, last updated June 3, 2016
+% v0.9, last updated June 26, 2016
 %
 % Written 2012-2013, 2016 by Radu Craioveanu
 % Email: radu.craioveanu@utoronto.ca 
