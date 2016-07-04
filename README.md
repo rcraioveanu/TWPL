@@ -4,6 +4,11 @@ This class provides the style for submissions to the Toronto Working Papers in L
 
 In order to use the style, you will need to have the `TWPL.cls` file in the same directory as your `.tex` file. I recommend using the `TWPLStyleSheet.tex` file as a starting point for your manuscript, skimming through and seeing how everything is structured in that file, and then substituting your own text where appropriate.
 
+### Citations and `apacite`
+
+This class uses the `natbibapa` option from the `apacite` package. This option is not available in some previous versions of the package, so if you are having issues with citations, please ensure you have an up-to-date version of the package (through the package update utility for your TeX distribution). 
+
+
 ### A note about fonts
 
 Small caps fonts in the body text (TNR) use TeX Gyre Termes, as all versions of Times New Roman before Windows 8.1 do not have small caps. If you are using Windows 8.1 or 10, this can be changed in the `.cls` file if you wish.
